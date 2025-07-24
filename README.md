@@ -95,38 +95,74 @@ Generates a customized itinerary PDF.
 
 ```json
 {
-  "TravelerName": "John Doe",
-  "DepartureFrom": "New York",
-  "Destination": "Paris",
-  "DepartureDate": "2025-08-01",
-  "ArrivalDate": "2025-08-10",
-  "TravellerCount": 2,
-  "FlightSummary": [
-    { "Date": "2025-08-01", "FlightDetail": "Flight ABC123" }
+  "traveler_name": "Rahul",
+  "departure_from": "Kolkata",
+  "destination": "Singapore",
+  "departure_date": "2025-09-06",
+  "arrival_date": "2025-09-15",
+  "traveller_count": 4,
+  "daily_itinerary": {
+    "Day 1": {
+      "morning": "Visit Gardens by the Bay",
+      "afternoon": "Lunch at Clarke Quay",
+      "evening": "Night Safari"
+    }
+  },
+  "flight_summary": [
+    {
+      "date": "09/06/2025",
+      "flight_detail": "Fly AI 123 from Kolkata to Singapore"
+    }
   ],
-  "HotelSummary": [
-    { "City": "Paris", "CheckIn": "2025-08-01", "CheckOut": "2025-08-05", "Nights": 4, "HotelName": "Hotel Parisienne" }
+  "hotel_summary": [
+    {
+      "city": "Singapore",
+      "checkin": "09/06/2025",
+      "checkout": "15/06/2025",
+      "nights": 6,
+      "hotel_name": "Marina Bay Sands"
+    }
   ],
-  "InclusionSummary": [
-    { "Category": "Meals", "Count": 2, "Details": "Breakfast + Dinner", "Status": "Included" }
+  "inclusion_summary": [
+    {
+      "category": "Meals",
+      "count": 5,
+      "details": "Breakfast Included",
+      "status": "Confirmed"
+    }
   ],
-  "ActivitySummary": [
-    { "City": "Paris", "Activity": "Eiffel Tower Visit", "Type": "Sightseeing", "TimeRequired": "2 hours" }
+  "activity_summary": [
+    {
+      "city": "Singapore",
+      "activity": "Universal Studios",
+      "type": "Theme Park",
+      "time_required": "Full Day"
+    }
   ],
-  "PaymentPlan": {
-    "TotalAmount": "$2000",
-    "TCS": "$200",
-    "Installments": [
-      { "Installment": "1st", "Amount": "$1000", "DueDate": "2025-07-01" },
-      { "Installment": "2nd", "Amount": "$1000", "DueDate": "2025-08-01" }
+  "payment_plan": {
+    "total_amount": "₹75,000",
+    "tcs": "₹2,250",
+    "installments": [
+      {
+        "installment": "1st Installment",
+        "amount": "₹37,500",
+        "due_date": "2025-08-01"
+      },
+      {
+        "installment": "2nd Installment",
+        "amount": "₹37,500",
+        "due_date": "2025-08-20"
+      }
     ]
   },
-  "VisaDetails": {
-    "VisaType": "Tourist",
-    "Validity": "30 Days",
-    "ProcessingDate": "2025-07-15"
+  "visa_details": {
+    "visa_type": "Tourist",
+    "validity": "30 days",
+    "processing_date": "2025-07-20"
   }
 }
+
+  
 ```
 
 ---

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vigovia Design</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Custom scrollbar for vertical sliders */
+  .slider-vertical {
+    writing-mode: bt-lr; /* Vertical orientation */
+    -webkit-appearance: slider-vertical;
+    width: 6px;
+    height: 80px;
+  }
+  /* Hide default input range styles for horizontal */
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 12px;
+    background: #ddd;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #5a4ade;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    margin-top: -6px;
+  }
+  /* Vertical slider thumb */
+  input[type=range].vertical::-webkit-slider-thumb {
+    margin-left: -6px;
+  }
+  input[type=range].vertical {
+    writing-mode: bt-lr; /* rotation */
+    width: 6px;
+    height: 80px;
+    margin-left: 8px;
+    background: #ddd;
+  }
+  input[type=range].vertical::-webkit-slider-thumb {
+    background: #5a4ade;
+  }
+  /* Firefox vertical slider thumb fix */
+  input[type=range].vertical::-moz-range-thumb {
+    background: #5a4ade;
+    border: none;
+  }
+</style>
+</head>
+<body class="bg-white font-sans text-gray-800">
+
+<!-- Container for entire page -->
+<div class="max-w-screen-sm mx-auto p-4">
+
+  <!-- Header with logo text and language dropdown -->
+  <header class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-semibold text-purple-600 tracking-wide select-none">
+      vigovia
+    </h1>
+    <select aria-label="Select language" class="border border-purple-600 rounded-md px-2 py-1 text-purple-600 font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple-400">
+      <option>ENG</option>
+      <option>ESP</option>
+      <option>FRA</option>
+    </select>
+  </header>
+
+  <!-- Gradient banner -->
+  <section class="mb-6 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-500 h-20 flex items-center justify-center text-white font-semibold text-lg tracking-wide select-none">
+    select your adventure
+  </section>
+
+  <!-- Search bar -->
+  <div class="mb-8">
+    <input type="search" placeholder="Search your destination..." aria-label="Search your destination" class="w-full border border-purple-400 rounded-full py-2 px-4 text-purple-700 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+  </div>
+
+  <!-- Travel options list -->
+  <section class="space-y-6">
+    <!-- Single Trip Item -->
+    <article class="flex gap-4 items-center border-b border-purple-200 pb-4">
+
+      <!-- Left vertical label -->
+      <div class="w-10 bg-purple-600 rounded-xl text-white text-center font-semibold py-2 select-none">
+        3 Days
+      </div>
+
+      <!-- Destination image and text -->
+      <div class="flex items-center gap-4 flex-grow">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/20b9846d-e266-43f1-bd23-26a9ac3315ea.png" alt="Tropical beach with palm trees and clear water under blue sky" class="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+        <div class="">
+          <h2 class="font-semibold text-lg text-purple-700">Tulum, Mexico</h2>
+          <p class="text-gray-500 text-sm">Ultra Beach Lovers, Relax, Local Hotels</p>
+        </div>
+      </div>
+
+      <!-- Vertical slider -->
+      <input type="range" min="0" max="100" value="60" aria-label="Select intensity" class="vertical" />
+    </article>
+
+    <!-- Second Trip Item -->
+    <article class="flex gap-4 items-center border-b border-purple-200 pb-4">
+      <div class="w-10 bg-purple-600 rounded-xl text-white text-center font-semibold py-2 select-none">
+        5 Days
+      </div>
+      <div class="flex items-center gap-4 flex-grow">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/04eec32e-d1de-4b98-ad4b-69556d804db0.png" alt="Aerial view of a tropical island lagoon in turquoise water surrounded by lush green palms" class="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+        <div>
+          <h2 class="font-semibold text-lg text-purple-700">Maldives</h2>
+          <p class="text-gray-500 text-sm">Luxury Living, Snorkeling, Couples’ Paradise</p>
+        </div>
+      </div>
+      <input type="range" min="0" max="100" value="80" aria-label="Select intensity" class="vertical" />
+    </article>
+
+    <!-- Third Trip Item -->
+    <article class="flex gap-4 items-center border-b border-purple-200 pb-4">
+      <div class="w-10 bg-purple-600 rounded-xl text-white text-center font-semibold py-2 select-none">
+        7 Days
+      </div>
+      <div class="flex items-center gap-4 flex-grow">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8389e9b2-74fb-46a5-b553-4ab8e4147837.png" alt="Charming mountain village with colorful houses and green hills on a sunny day" class="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+        <div>
+          <h2 class="font-semibold text-lg text-purple-700">Zermatt, Switzerland</h2>
+          <p class="text-gray-500 text-sm">Ski Adventures, Cozy Chalets, Scenic Views</p>
+        </div>
+      </div>
+      <input type="range" min="0" max="100" value="50" aria-label="Select intensity" class="vertical" />
+    </article>
+
+    <!-- Fourth Trip Item -->
+    <article class="flex gap-4 items-center border-b border-purple-200 pb-4">
+      <div class="w-10 bg-purple-600 rounded-xl text-white text-center font-semibold py-2 select-none">
+        4 Days
+      </div>
+      <div class="flex items-center gap-4 flex-grow">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/03c8b2a9-ad02-4652-b027-fc08cfd326e8.png" alt="Modern city street with colorful buildings, bustling cafes and shops" class="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+        <div>
+          <h2 class="font-semibold text-lg text-purple-700">Barcelona, Spain</h2>
+          <p class="text-gray-500 text-sm">Culture, Tapas, Architecture</p>
+        </div>
+      </div>
+      <input type="range" min="0" max="100" value="70" aria-label="Select intensity" class="vertical" />
+    </article>
+  </section>
+
+  <!-- Flight Summary -->
+  <section class="my-8">
+    <h3 class="text-purple-700 font-semibold mb-3 text-lg">Flight Summary</h3>
+    <div class="border border-purple-400 rounded-lg divide-y divide-purple-300">
+      <div class="px-4 py-2 flex justify-between cursor-pointer items-center select-none">
+        <span class="text-purple-900 font-medium">Depart</span>
+        <span class="text-purple-600 text-xl font-bold">›</span>
+      </div>
+      <div class="px-4 py-2 flex justify-between cursor-pointer items-center select-none">
+        <span class="text-purple-900 font-medium">Return</span>
+        <span class="text-purple-600 text-xl font-bold">›</span>
+      </div>
+      <div class="px-4 py-2 flex justify-between cursor-pointer items-center select-none">
+        <span class="text-purple-900 font-medium">Passengers</span>
+        <span class="text-purple-600 text-xl font-bold">›</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hotel Booking -->
+  <section class="mb-8">
+    <h3 class="text-purple-700 font-semibold mb-3 text-lg select-none">Hotel Booking</h3>
+    <div class="grid grid-cols-5 gap-2 text-center border border-purple-400 rounded-t-lg select-none bg-purple-100 text-purple-900 font-semibold text-sm">
+      <div class="py-2 border-r border-purple-400">Stay</div>
+      <div class="py-2 border-r border-purple-400">Check In</div>
+      <div class="py-2 border-r border-purple-400">Check Out</div>
+      <div class="py-2 border-r border-purple-400">Room</div>
+      <div class="py-2">Guests</div>
+    </div>
+    <div class="grid grid-cols-5 gap-2 bg-purple-50 border border-purple-400 rounded-b-lg p-4 min-h-[5rem] text-sm text-purple-700">
+      <div>---</div>
+      <div>---</div>
+      <div>---</div>
+      <div>---</div>
+      <div>---</div>
+    </div>
+    <p class="mt-2 text-xs text-gray-400 select-none">Details will be filled after flight selection.</p>
+  </section>
+
+  <!-- Important Notes -->
+  <section class="mb-8">
+    <h3 class="text-purple-700 font-semibold mb-3 text-lg">Important Notes</h3>
+    <div class="grid grid-cols-2 gap-4 text-sm border border-purple-400 rounded-lg bg-purple-50 p-4">
+      <div>
+        <h4 class="text-purple-900 font-semibold mb-1">Note</h4>
+        <p>All bookings are final and non-refundable once confirmed.</p>
+      </div>
+      <div>
+        <h4 class="text-purple-900 font-semibold mb-1">Detail</h4>
+        <p>Please check visa requirements and travel restrictions before booking. Travel insurance is recommended.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope Of Service -->
+  <section class="mb-8">
+    <h3 class="text-purple-700 font-semibold mb-3 text-lg">Scope Of Service</h3>
+    <div class="grid grid-cols-2 gap-4 text-sm border border-purple-400 rounded-lg bg-purple-50 p-4">
+      <div>
+        <h4 class="text-purple-900 font-semibold mb-1">Service</h4>
+        <p>Includes flight booking, hotel reservation, and local support during your stay.</p>
+      </div>
+      <div>
+        <h4 class="text-purple-900 font-semibold mb-1">Exclusions</h4>
+        <p>Does not include personal expenses, optional tours, or travel insurance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inclusion Summary -->
+  <section class="mb-8">
+    <h3 class="text-purple-700 font-semibold mb-3 text-lg">Inclusion Summary</h3>
+    <div class="grid grid-cols-4 gap-4 text-sm border border-purple-400 rounded-lg bg-purple-50 p-4">
+      <div class="font-semibold text-purple-900">Category</div>
+      <div class="font-semibold text-purple-900">Count</div>
+      <div class="font-semibold text-purple-900">Days</div>
+      <div class="font-semibold text-purple-900">Adult / Children</div>
+    </div>
+    <p class="mt-2 text-xs text-gray-400 select-none">Summary will update after selections.</p>
+  </section>
+
+  <!-- Activity Table -->
+  <section class="mb-8">
+    <h3 class="text-purple-700 font-semibold mb-3 text-lg">Activity Table</h3>
+    <div class="grid grid-cols-4 text-sm border border-purple-400 rounded-lg bg-purple-50 p-4 min-h-[8rem]">
+      <div>Day</div>
+      <div>Activity</div>
+      <div>Location</div>
+      <div>Duration</div>
+    </div>
+  </section>
+
+  <!-- Terms and Conditions -->
+  <section class="mb-8 text-xs text-purple-600">
+    <p class="underline cursor-pointer select-none">Terms and Conditions</p>
+  </section>
+
+  <!-- Payment Plan -->
+  <section class="mb-8">
+    <h3 class="text-purple-700 font-semibold mb-3 text-lg">Payment Plan</h3>
+    <div class="flex gap-4 mb-2">
+      <input type="text" placeholder="Payment Type" aria-label="Payment type" class="flex-grow border border-purple-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+      <button class="bg-purple-600 text-white px-5 rounded hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400">Add</button>
+    </div>
+    <div class="grid grid-cols-3 gap-2 text-sm border border-purple-400 rounded-lg bg-purple-50 p-4 min-h-[5rem] text-purple-700">
+      <div>Deposit</div>
+      <div>Amount</div>
+      <div>Due Date</div>
+    </div>
+  </section>
+
+  <!-- User Details Input -->
+  <section class="mb-6">
+    <input type="text" placeholder="Your Details..." aria-label="User details" class="w-full border border-purple-400 rounded-full py-2 px-4 text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+  </section>
+
+  <!-- Call to Action Button -->
+  <section class="text-center mb-12">
+    <button class="bg-purple-700 text-white rounded-full px-12 py-3 text-lg font-semibold tracking-wide hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-400">
+      PLAN. PACK. GO!
+    </button>
+  </section>
+
+  <!-- Footer Horizontal Line -->
+  <hr class="border-t border-purple-200 mt-8" />
+
+</div>
+
+</body>
+</html>
+
